@@ -4,7 +4,7 @@ import { Heading } from "@/components/ui/heading";
 
 const Home = () => {
   return (
-    <div className="h-screen flex flex-col justify-center items-center font-medium">
+    <div className="flex h-screen flex-col justify-center items-center font-medium">
       <Heading>Sahil Kumar Dev</Heading>
       <span className="mt-4 flex flex-col items-center gap-2">
         <Button>Click to connect.</Button>
