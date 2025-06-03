@@ -1,13 +1,18 @@
 import MaxWidthWrapper from "@/components/_components/max-width-wrapper";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import type { Metadata } from "next";
-import "./globals.css";
+import "../style/globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -32,6 +37,7 @@ export default function RootLayout({
         className={`
           ${geistSans.variable} 
           ${geistMono.variable}
+          ${inter.variable}
           dark:bg-black/10
           bg-[#fffbf5]
           antialiased
