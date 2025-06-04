@@ -1,14 +1,7 @@
 import ProjectCard from "@/components/_components/project-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import {
-  ArrowRight,
-  Copy,
-  Instagram,
-  Linkedin,
-  Plus,
-  Youtube,
-} from "lucide-react";
+import { ArrowRight, Copy, Plus } from "lucide-react";
 import Image from "next/image";
 
 const Home = () => {
@@ -89,47 +82,6 @@ const Home = () => {
               <ProjectCard key={item} />
             ))}
           </CardContent>
-        </Card>
-
-        <div className="flex flex-col items-center justify-center text-center py-6">
-          <h1 className="text-3xl font-bold">Let’s work together.</h1>
-
-          <p className="text-muted-foreground text-lg pt-0.5 pb-2.5">
-            Creating user experience and visual appealing design
-          </p>
-          <div className="flex gap-4 mt-2">
-            <Button variant={"secondary"}>
-              <Plus />
-              Hire Me
-            </Button>
-            <Button>
-              <Copy />
-              Copy Email
-            </Button>
-          </div>
-        </div>
-
-        <Card>
-          <CardHeader className="mt-3">
-            <div className="flex items-center justify-between">
-              <h1 className="flex items-center gap-1.5 font-medium text-muted-foreground text-lg">
-                <div className="bg-muted-foreground h-2 w-2 rounded-full" />
-                Social Media
-              </h1>
-
-              <div className="flex items-center gap-2">
-                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
-                  <Instagram />
-                </button>
-                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
-                  <Youtube />
-                </button>
-                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
-                  <Linkedin />
-                </button>
-              </div>
-            </div>
-          </CardHeader>
         </Card>
       </div>
     </div>
