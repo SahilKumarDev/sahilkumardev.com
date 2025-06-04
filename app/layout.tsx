@@ -1,24 +1,48 @@
 import MaxWidthWrapper from "@/components/_components/max-width-wrapper";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import "../style/globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import localFont from "next/font/local";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// const inter = Inter({
+//   variable: "--font-inter",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+export const interFont = localFont({
+  src: [
+    {
+      path: "./fonts/inter-normal.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/inter-medium.ttf",
+      weight: "500",
+      style: "normal", // Fixed: was "medium"
+    },
+    {
+      path: "./fonts/inter-bold.ttf",
+      weight: "700",
+      style: "normal", // Fixed: was "bold"
+    },
+  ],
+  variable: "--font-inter", // Added CSS variable
+  display: "swap", // Optimize loading
 });
 
 export const metadata: Metadata = {
@@ -35,9 +59,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`
-          ${geistSans.variable} 
-          ${geistMono.variable}
-          ${inter.variable}
+          ${interFont.className}
+          ${interFont.variable}
           dark:bg-black/10
           bg-[#fffbf5]
           antialiased

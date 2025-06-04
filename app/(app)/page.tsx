@@ -1,14 +1,23 @@
+import ProjectCard from "@/components/_components/project-card";
 import { Button } from "@/components/ui/button";
-import { Copy, Plus } from "lucide-react";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Copy,
+  Instagram,
+  Linkedin,
+  Plus,
+  Youtube,
+} from "lucide-react";
 import Image from "next/image";
 
 const Home = () => {
   return (
     <div className="mt-32 px-6">
       <div className="flex items-center justify-between">
-        <h1 className="flex items-center gap-1.5 font-inter font-bold text-xl">
-          <div className="bg-muted-foreground h-2.5 w-2.5 rounded-full animate-pulse" />
-          Web Developer
+        <h1 className="flex items-center gap-1.5 font-medium text-xl">
+          <div className="bg-muted-foreground h-2 w-2 rounded-full" />
+          Developer Portfolio
         </h1>
 
         <div className="flex items-center gap-1.5 bg-green-500/30 px-3.5 py-1 rounded-full border border-green-500 text-xs font-medium text-green-300 uppercase">
@@ -17,9 +26,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex py-8 gap-6">
-        <div className="">
-          <h1 className="text-4xl font-semibold">I&apos;m Sahil Kumar</h1>
+      <div className="flex pt-10 pb-5 gap-6">
+        <div>
+          <h1 className="text-3xl font-bold">I&apos;m Sahil Kumar</h1>
           <p className="text-muted-foreground py-2">
             Web developer with a passion for creating dynamic and responsive web
             applications. I specialize in building user-friendly interfaces and
@@ -27,39 +36,101 @@ const Home = () => {
           </p>
 
           <div className="flex gap-4 mt-2">
+            <Button variant={"secondary"}>
+              <Plus />
+              Hire Me
+            </Button>
             <Button>
-              <Plus />
-              Hire Me
-            </Button>
-
-            <Button variant={"outline"}>
-              <Plus />
-              Hire Me
-            </Button>
-
-            <Button>
-              <Plus />
-              Hire Me
-            </Button>
-
-            <button className="inline-flex border border-orange-500 justify-center items-center px-3 py-2 rounded-sm bg-primary/50 gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none hover:outline-6 outline-orange-500/10 disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive">
               <Copy />
               Copy Email
-            </button>
-
-            <button className="inline-flex text-orange-400 underline-offset-6 hover:underline justify-center items-center px-3 py-2 gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none outline-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive">
-              link
-            </button>
+            </Button>
           </div>
         </div>
 
         <Image
           src="/user.png"
           alt="Profile Picture"
-          width={200}
-          height={200}
-          className="rounded-full border-2 border-orange-400/40 p-3 bg-orange-500/20"
+          width={100}
+          height={100}
+          className="h-44 w-44 rounded-full border-2 border-orange-400/40 p-3 bg-orange-500/20"
         />
+      </div>
+
+      <div className="grid gap-6 mt-4">
+        <Card>
+          <CardHeader className="mt-3">
+            <div className="flex items-center justify-between">
+              <h1 className="flex items-center gap-1.5 font-medium text-muted-foreground text-lg">
+                <div className="bg-muted-foreground h-2 w-2 rounded-full" />
+                Projects
+              </h1>
+
+              <Button variant={"outline"}>
+                view all <ArrowRight className="size-4" />
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="gap-4 grid">
+            {[1, 2, 3].map((item) => (
+              <ProjectCard key={item} />
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="mt-3">
+            <h1 className="flex items-center gap-1.5 font-medium text-muted-foreground text-lg">
+              <div className="bg-muted-foreground h-2 w-2 rounded-full" />
+              Recent Work
+            </h1>
+          </CardHeader>
+          <CardContent className="gap-4 grid">
+            {[1, 2].map((item) => (
+              <ProjectCard key={item} />
+            ))}
+          </CardContent>
+        </Card>
+
+        <div className="flex flex-col items-center justify-center text-center py-6">
+          <h1 className="text-3xl font-bold">Let’s work together.</h1>
+
+          <p className="text-muted-foreground text-lg pt-0.5 pb-2.5">
+            Creating user experience and visual appealing design
+          </p>
+          <div className="flex gap-4 mt-2">
+            <Button variant={"secondary"}>
+              <Plus />
+              Hire Me
+            </Button>
+            <Button>
+              <Copy />
+              Copy Email
+            </Button>
+          </div>
+        </div>
+
+        <Card>
+          <CardHeader className="mt-3">
+            <div className="flex items-center justify-between">
+              <h1 className="flex items-center gap-1.5 font-medium text-muted-foreground text-lg">
+                <div className="bg-muted-foreground h-2 w-2 rounded-full" />
+                Social Media
+              </h1>
+
+              <div className="flex items-center gap-2">
+                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+                  <Instagram />
+                </button>
+                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+                  <Youtube />
+                </button>
+                <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+                  <Linkedin />
+                </button>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
       </div>
     </div>
   );
