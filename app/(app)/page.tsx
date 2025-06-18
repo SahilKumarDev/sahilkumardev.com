@@ -1,8 +1,11 @@
 import ProjectCard from "@/components/_components/project-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Heading } from "@/components/ui/heading";
 import { ArrowRight, Copy, Plus } from "lucide-react";
 import Image from "next/image";
+import { RiLinkedinLine, RiInstagramLine, RiYoutubeLine } from "react-icons/ri";
+
 
 const Home = () => {
   return (
@@ -24,9 +27,24 @@ const Home = () => {
           <h1 className="text-3xl font-bold">I&apos;m Sahil Kumar</h1>
           <p className="text-muted-foreground py-2">
             Web developer with a passion for creating dynamic and responsive web
-            applications. I specialize in building user-friendly interfaces and
-            ensuring seamless user experiences across various devices.
+            applications.
           </p>
+
+          <Heading variant="h1">Web developer</Heading>
+
+          <Heading variant="h2">Web developer</Heading>
+
+          <Heading variant="h3">Web developer</Heading>
+
+          <Heading variant="h5">
+            Web developer with a passion for creating dynamic and responsive web
+            applications.
+          </Heading>
+
+          <Heading variant="h6">
+            Web developer with a passion for creating dynamic and responsive web
+            applications.
+          </Heading>
 
           <div className="flex gap-4 mt-2">
             <Button variant={"secondary"}>
@@ -47,6 +65,48 @@ const Home = () => {
           height={100}
           className="h-44 w-44 rounded-full border-2 border-orange-400/40 p-3 bg-orange-500/20"
         />
+      </div>
+
+
+
+      <div>
+         <div className="flex flex-col items-center justify-center text-center py-6">
+        <h1 className="text-3xl font-bold">connects</h1>
+
+        <p className="text-muted-foreground text-lg pt-0.5 pb-2.5">
+          Creating user experience and visual appealing design
+        </p>
+        <div className="flex gap-4 mt-2">
+          <Button variant={"secondary"}>
+            <Plus />
+            Hire Me
+          </Button>
+          <Button>
+            <Copy />
+            Copy Email
+          </Button>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <h1 className="flex items-center gap-1.5 font-medium text-muted-foreground text-lg">
+          <div className="bg-muted-foreground h-2 w-2 rounded-full" />
+          Social Media
+        </h1>
+
+        <div className="flex items-center gap-2">
+          <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+            <RiInstagramLine />
+          </button>
+          <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+            <RiYoutubeLine />
+          </button>
+          <button className="border border-muted-foreground/30 p-2 flex items-center justify-center bg-muted rounded-full h-10 w-10">
+            <RiLinkedinLine />
+          </button>
+        </div>
+      </div>
+
       </div>
 
       <div className="grid gap-6 mt-4">
