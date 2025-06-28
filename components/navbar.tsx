@@ -7,11 +7,26 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const navItems = [
-    { name: "about", href: "/" },
-    { name: "resume", href: "/resume" },
-    { name: "portfolio", href: "/portfolio" },
-    { name: "youtube", href: "/youtube" },
-    { name: "contact", href: "/contact" },
+    {
+      name: "about",
+      href: "/",
+    },
+    {
+      name: "resume",
+      href: "/resume",
+    },
+    {
+      name: "portfolio",
+      href: "/portfolio",
+    },
+    {
+      name: "youtube",
+      href: "/youtube",
+    },
+    {
+      name: "contact",
+      href: "/contact",
+    },
   ];
 
   return (
