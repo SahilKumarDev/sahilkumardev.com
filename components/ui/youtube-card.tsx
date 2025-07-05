@@ -1,31 +1,48 @@
+import React from "react";
+import { YouTubeVideoProps } from "@/lib/youtube";
 import Image from "next/image";
 
-interface YoutubeCardProps {
-  src: string;
-  title: string;
-  link: string;
-  description: string;
-}
+const YoutubeCard: React.FC<YouTubeVideoProps> = ({
+  src,
+  link,
+  title,
+  description,
+  publishedAt,
+}) => {
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return "";
+    return new Date(dateString).toLocaleDateString();
+  };
 
-const YoutubeCard = ({ src, title, link, description }: YoutubeCardProps) => (
-  <li className="blog-post-item">
-    <a href={link} target="_blank">
-      <figure className="blog-banner-box">
-        <Image
-          src={src}
-          alt={title}
-          width={100}
-          height={100}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-      </figure>
-      <div className="blog-content">
-        <h3 className="h3 blog-item-title">{title}</h3>
-        <p className="blog-text">{description}</p>
-      </div>
-    </a>
-  </li>
-);
+  const truncateDescription = (desc: string, maxLength: number = 70) => {
+    if (desc.length <= maxLength) return desc;
+    return desc.substring(0, maxLength) + "...";
+  };
+
+  return (
+    <li className="blog-post-item">
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <figure className="blog-banner-box">
+          <Image
+            src={src}
+            alt={title}
+            loading="lazy"
+            height={1000}
+            width={1000}
+          />
+        </figure>
+        <div className="blog-content">
+          <div className="blog-meta">
+            <p className="blog-category">YouTube</p>
+            <span className="dot"></span>
+            <time dateTime={publishedAt}>{formatDate(publishedAt)}</time>
+          </div>
+          <h3 className="h3 blog-item-title line-clamp-1">{title}</h3>
+          <p className="blog-text">{truncateDescription(description)}</p>
+        </div>
+      </a>
+    </li>
+  );
+};
 
 export default YoutubeCard;
