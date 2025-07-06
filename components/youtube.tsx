@@ -32,7 +32,7 @@ const Youtube: React.FC = () => {
         const result = await fetchYouTubeVideos(
           apiKey,
           channelId,
-          12,
+          6,
           pageToken
         );
 

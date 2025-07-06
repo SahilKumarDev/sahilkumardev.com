@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Testimonials = () => {
   const testimonialsData = [
     {
@@ -27,11 +25,10 @@ const Testimonials = () => {
           <li className="testimonials-item" key={name}>
             <div className="content-card" data-testimonials-item>
               <figure className="testimonials-avatar-box">
-                <Image
+                <img
                   src={avatar}
                   alt={name}
-                  width={100}
-                  height={80}
+                  width="60"
                   data-testimonials-avatar
                 />
               </figure>

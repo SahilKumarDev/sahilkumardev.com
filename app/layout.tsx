@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../styles/global.css";
 import Sidebar from "@/components/sidebar";
 import Navbar from "@/components/navbar";
+import type { Metadata } from "next";
+import "../styles/global.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
       <body
@@ -33,7 +32,7 @@ export default function RootLayout({
         <main>
           <Sidebar />
           <div className="main-content">
-            <Navbar/>
+            <Navbar />
             {children}
           </div>
         </main>

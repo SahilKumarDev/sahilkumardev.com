@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+ 
 import { useState } from "react";
 import {
   FaEnvelope as Mail,
@@ -11,6 +10,7 @@ import {
   FaGithub as Github,
   FaYoutube as Youtube,
   FaLinkedin as Linkedin,
+  FaLightbulb as Lightbulb,
 } from "react-icons/fa";
 
 const contacts = [
@@ -59,11 +59,15 @@ const socialLinks = [
   },
   {
     icon: Youtube,
-    href: "https://www.youtube.com/channel/UCqPVcx9LH-_MLxjMxqwDf3g",
+    href: "https://www.youtube.com/@codingcollection",
   },
   {
     icon: Github,
     href: "https://github.com/SahilKumarDev",
+  },
+  {
+    icon: Lightbulb,
+    href: "https://axisbuddy.com",
   },
 ];
 
@@ -77,12 +81,7 @@ const Sidebar = () => {
       <aside className={`sidebar ${isSidebarActive ? "active" : ""}`}>
         <div className="sidebar-info">
           <figure className="avatar-box">
-            <Image
-              src={"/profile.png"}
-              alt="Sahil kumar"
-              width={80}
-              height={120}
-            />
+            <img src={"/profile.png"} alt="Sahil kumar" width="80" />
           </figure>
           <div className="info-content">
             <h1 className="name title-text-1" title="NSxVillan">

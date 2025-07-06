@@ -43,7 +43,7 @@ const YOUTUBE_API_BASE_URL = "https://www.googleapis.com/youtube/v3";
 export async function fetchYouTubeVideos(
   apiKey: string,
   channelId: string,
-  maxResults: number = 8,
+  maxResults: number = 6,
   pageToken?: string
 ): Promise<YouTubeVideosResult> {
   if (!apiKey) {
